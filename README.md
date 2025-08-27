@@ -1,63 +1,60 @@
-🤖 Bot de Senhas WiFi para Visitantes
+# 🤖 Bot de Senhas WiFi para Visitantes
+
 Este projeto é um bot do Telegram, desenvolvido em Python, que automatiza a distribuição de senhas de acesso ao WiFi para visitantes. Ele usa um arquivo Excel como base de dados para gerenciar as senhas de forma segura e organizada.
 
-✨ Funcionalidades em Destaque
-Distribuição Automatizada: O bot entrega senhas únicas e pré-cadastradas para cada visitante.
+## ✨ Funcionalidades em Destaque
 
-Validação de Documentos: Suporta a validação de CPF, RG e passaporte, garantindo que a informação seja válida.
+- **Distribuição Automatizada:** O bot entrega senhas únicas e pré-cadastradas para cada visitante.
+- **Validação de Documentos:** Suporta a validação de CPF, RG e passaporte, garantindo que a informação seja válida.
+- **Controle de Uso:** Uma senha, depois de entregue, é marcada e não pode ser reutilizada, e um limite de senhas é imposto por usuário.
+- **Consulta Rápida:** O visitante pode consultar facilmente as senhas que já recebeu.
 
-Controle de Uso: Uma senha, depois de entregue, é marcada e não pode ser reutilizada, e um limite de senhas é imposto por usuário.
+## ⚙️ Como o Bot Funciona
 
-Consulta Rápida: O visitante pode consultar facilmente as senhas que já recebeu.
+1. **Início:** O visitante inicia a conversa com o comando `/start`.
+2. **Solicitação:** O comando `/wifi` inicia o processo de pedido da senha.
+3. **Escolha do Dispositivo:** O bot solicita o tipo de dispositivo (Celular ou Outro).
+4. **Documento:** O visitante informa seu documento (CPF, RG ou Passaporte).
+5. **Entrega:** O bot valida o documento, encontra uma senha disponível, preenche os dados no arquivo Excel e entrega a senha ao visitante.
+6. **Consulta:** O comando `/minhassenhas` permite ao usuário ver as senhas que já foram cadastradas para seu ID.
 
-⚙️ Como o Bot Funciona
-Início: O visitante inicia a conversa com o comando /start.
+## 📂 Estrutura do Projeto
 
-Solicitação: O comando /wifi inicia o processo de pedido da senha.
+- `biblioteca_visitante.py`: O coração do projeto, com toda a lógica do bot.
+- `config_bot_senhaBFF.py`: Armazena o token do bot de forma segura.
+- `password.xlsx`: O banco de dados em Excel que contém as senhas. **Importante:** Deve ter as colunas `nome`, `senha`, `documento`, `dispositivos`, `status` e `user_id`.
+- `requirements.txt`: Lista todas as bibliotecas necessárias para rodar o projeto.
+- `.gitignore`: Arquivos e pastas que o Git deve ignorar (como o token do bot e o arquivo Excel).
 
-Escolha do Dispositivo: O bot solicita o tipo de dispositivo (Celular ou Outro).
+## 🚀 Como Instalar e Rodar
 
-Documento: O visitante informa seu documento (CPF, RG ou Passaporte).
+1. **Clone o Repositório:**
 
-Entrega: O bot valida o documento, encontra uma senha disponível, preenche os dados no arquivo Excel e entrega a senha ao visitante.
+   ```
+   git clone https://github.com/Gvargas1968/Senhas-Visitantes-WiFi.git
+   cd Senhas-Visitantes-WiFi
+   ```
 
-Consulta: O comando /minhassenhas permite ao usuário ver as senhas que já foram cadastradas para seu ID.
+2. **Instale as Dependências:**
 
-📂 Estrutura do Projeto
-biblioteca_visitante.py: O coração do projeto, com toda a lógica do bot.
+   ```
+   pip install -r requirements.txt
+   ```
 
-config_bot_senhaBFF.py: Armazena o token do bot de forma segura.
+3. **Configure o Token:**
 
-password.xlsx: O banco de dados em Excel que contém as senhas. Importante: Deve ter as colunas nome, senha, documento, dispositivos, status e user_id.
+   - Crie o arquivo `config_bot_senhaBFF.py`.
+   - Adicione a linha `TELEGRAM_TOKEN = "<SEU_TOKEN>"` e substitua `<SEU_TOKEN>` pelo seu token real.
 
-requirements.txt: Lista todas as bibliotecas necessárias para rodar o projeto.
+4. **Prepare a Base de Dados:**
 
-.gitignore: Arquivos e pastas que o Git deve ignorar (como o token do bot e o arquivo Excel).
+   - Crie o arquivo Excel `password.xlsx` e adicione as colunas necessárias.
+   - Preencha as colunas `nome` e `senha` com os dados do seu WiFi, deixando as outras em branco.
 
-🚀 Como Instalar e Rodar
-Clone o Repositório:
+5. **Execute o Bot:**
 
-git clone https://github.com/Gvargas1968/Senhas-Visitantes-WiFi.git
-cd Senhas-Visitantes-WiFi
+   ```
+   python biblioteca_visitante.py
+   ```
 
-Instale as Dependências:
-
-pip install -r requirements.txt
-
-Configure o Token:
-
-Crie o arquivo config_bot_senhaBFF.py.
-
-Adicione a linha TELEGRAM_TOKEN = "<SEU_TOKEN>" e substitua <SEU_TOKEN> pelo seu token real.
-
-Prepare a Base de Dados:
-
-Crie o arquivo Excel password.xlsx e adicione as colunas necessárias.
-
-Preencha as colunas nome e senha com os dados do seu WiFi, deixando as outras em branco.
-
-Execute o Bot:
-
-python biblioteca_visitante.py
-
-Seu bot estará online e pronto para uso!
+   Seu bot estará online e pronto para uso!
