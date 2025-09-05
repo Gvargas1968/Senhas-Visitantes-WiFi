@@ -56,5 +56,20 @@ Este projeto é um bot do Telegram, desenvolvido em Python, que automatiza a dis
    ```
    python biblioteca_visitante.py
    ```
+  ### 🖥️ Requisitos de Hardware
 
-   Seu bot estará online e pronto para uso!
+Este projeto é leve e pode ser executado em máquinas simples. Requisitos mínimos:
+
+- **Processador**: Intel Core i3 ou equivalente  
+- **Memória RAM**: 4 GB (ideal: 8 GB para uso contínuo)  
+- **Armazenamento**: 500 MB livres  
+- **Sistema Operacional**: Windows 10/11, macOS ou Linux com Python 3.7+  
+- **Conexão com a Internet**: Necessária para comunicação com a API do Telegram  
+
+---
+
+### 🧩 Dica Extra
+
+Se você pretende escalar o projeto ou integrá-lo com banco de dados, autenticação avançada ou dashboards, considere rodá-lo em um servidor dedicado ou em nuvem (como **Azure**, **AWS** ou **Google Cloud**).
+
+   
